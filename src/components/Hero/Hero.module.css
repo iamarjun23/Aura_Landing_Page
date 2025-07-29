@@ -1,0 +1,181 @@
+.heroSection {
+  min-height: 100vh;
+  background: #0D0D0D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Rectangle 8 - Dual Conic Gradient Beams */
+.beamGlow {
+  position: absolute;
+  width: 50.01%;  /* Adds 1px overlap */
+  height: 100%;
+  background: conic-gradient(
+    from 90deg at 50% 50%, 
+    #F8F8F8 0deg, 
+    #000000 0deg, 
+    #AAAAAA 300deg, 
+    #F8F8F8 360deg
+  );
+  mix-blend-mode: color-dodge;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Left Beam */
+.left {
+  left: 0.7;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;  /* Vertically center without translate */
+}
+
+/* Right Beam */
+.right {
+  right: -1;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  transform: scaleX(-1); /* Keep the mirror effect */
+}
+
+
+
+
+/* Rectangle 9 - Linear Gradient Overlay */
+.gradientOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg, 
+    #0D0D0D 0%, 
+    rgba(13, 13, 13, 0.8) 15%,
+    rgba(0, 0, 0, 0.1) 40%, 
+    rgba(0, 0, 0, 0.1) 60%,
+    rgba(13, 13, 13, 0.8) 85%,
+    #0D0D0D 100%
+  );
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 2; /* Increased from 1 to 2 for more prominence */
+  opacity: 1; /* Added opacity control */
+}
+
+
+.textContainer {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
+  font-size: 7.1rem;
+  font-weight: 300;
+  letter-spacing: 0.22em;
+  margin-bottom: 2.7rem;
+  color: #fff;
+  gap: 2.5rem;
+  text-shadow: 0 0 30px rgba(188, 220, 255, 0.3);
+}
+
+@media (min-width: 768px) { 
+  .heading { 
+    font-size: 8.2rem; 
+    gap: 4rem; 
+  } 
+}
+
+.gradientText {
+  background: linear-gradient(90deg, #f8f8f8 38%, #bcdcff 62%, #ffffff 99%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  filter: drop-shadow(0 0 10px rgba(188, 220, 255, 0.2));
+}
+
+.subtext {
+  font-size: 1.12rem;
+  color: #c3d1e2;
+  margin-bottom: 2.05rem;
+  letter-spacing: 0.01em;
+  font-weight: 400;
+  text-shadow: 0 0 15px rgba(195, 209, 226, 0.2);
+}
+
+@media (min-width: 768px) { 
+  .subtext { 
+    font-size: 1.37rem; 
+  } 
+}
+
+.joinButton {
+  background: linear-gradient(145deg, #f5f9fe, #e3f2fd);
+  padding: 1.12rem 4.2rem;
+  border: 1px solid rgba(188, 220, 255, 0.2);
+  outline: none;
+  border-radius: 9999px;
+  font-size: 1.13rem;
+  font-weight: 500;
+  color: #111c22;
+  letter-spacing: 0.06em;
+  margin-top: 0.7rem;
+  cursor: pointer;
+  box-shadow: 
+    0 4px 32px rgba(96, 165, 250, 0.2),
+    0 0 20px rgba(184, 224, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.joinButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.joinButton:hover::before {
+  left: 100%;
+}
+
+.joinButton:hover {
+  background: linear-gradient(145deg, #dbeafe, #bbdefb);
+  color: #0f172a;
+  border-color: rgba(188, 220, 255, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 46px rgba(96, 165, 250, 0.4),
+    0 0 24px rgba(227, 246, 255, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.joinButton:active {
+  transform: translateY(-2px) scale(0.98);
+  box-shadow: 
+    0 2px 16px rgba(96, 165, 250, 0.3),
+    inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}

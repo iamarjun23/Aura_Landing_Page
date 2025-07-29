@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+.section {
+  padding: 5rem 1.5rem;
+  background-color: #0D0D0D;
+  font-family: 'Plus Jakarta Sans';
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 72rem;
+}
+
+.headerContainer {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.heading {
+  font-size: 42px;
+  font-weight: 300;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  color: white;
+}
+
+.gradientText {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 3rem 2rem;
+  justify-items: center;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* First row positioning */
+.memberCard:nth-child(1) {
+  grid-column: 1 / 2;
+  grid-row: 1;
+  justify-self: center;
+}
+
+.memberCard:nth-child(2) {
+  grid-column: 3 / 4;
+  grid-row: 1;
+  justify-self: center;
+}
+
+.memberCard:nth-child(3) {
+  grid-column: 5 / 6;
+  grid-row: 1;
+  justify-self: center;
+}
+
+/* Second row positioning - in the gaps */
+.memberCard:nth-child(4) {
+  grid-column: 2 / 3;
+  grid-row: 2;
+  justify-self: center;
+}
+
+.memberCard:nth-child(5) {
+  grid-column: 4 / 5;
+  grid-row: 2;
+  justify-self: center;
+}
+
+.memberCard {
+  text-align: center;
+  position: relative;
+  width: 100%;
+  max-width: 200px;
+}
+
+.imageContainer {
+  position: relative;
+  margin-bottom: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.imageWrapper {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.25rem;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .imageWrapper {
+    width: 12rem;
+    height: 12rem;
+  }
+}
+
+.memberImage {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholderText {
+  color: white;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.memberName {
+  font-size: 36px;
+  font-weight: 500;
+  color: white;
+  line-height: 1.3;
+  text-align: center;
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .memberName {
+    font-size: 28px;
+  }
+  
+  .teamGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem 2rem;
+  }
+  
+  .memberCard:nth-child(1),
+  .memberCard:nth-child(2),
+  .memberCard:nth-child(3),
+  .memberCard:nth-child(4),
+  .memberCard:nth-child(5) {
+    grid-column: auto;
+    grid-row: auto;
+    justify-self: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .teamGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

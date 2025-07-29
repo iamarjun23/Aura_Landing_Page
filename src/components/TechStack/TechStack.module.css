@@ -1,0 +1,229 @@
+.container {
+  padding: 5rem 1.5rem;
+  background-color: #0D0D0D;
+}
+
+.innerContainer {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2rem 1rem;
+  align-items: center;
+  justify-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.techItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Staggered appearing animation */
+.techItem:nth-child(1) { animation-delay: 0.1s; }
+.techItem:nth-child(2) { animation-delay: 0.2s; }
+.techItem:nth-child(3) { animation-delay: 0.3s; }
+.techItem:nth-child(4) { animation-delay: 0.4s; }
+.techItem:nth-child(5) { animation-delay: 0.5s; }
+.techItem:nth-child(6) { animation-delay: 0.6s; }
+.techItem:nth-child(7) { animation-delay: 0.7s; }
+
+/* First row positioning */
+.techItem:nth-child(1) {
+  grid-column: 1 / 2;
+  grid-row: 1;
+}
+
+.techItem:nth-child(2) {
+  grid-column: 3 / 4;
+  grid-row: 1;
+}
+
+.techItem:nth-child(3) {
+  grid-column: 5 / 6;
+  grid-row: 1;
+}
+
+.techItem:nth-child(4) {
+  grid-column: 7 / 8;
+  grid-row: 1;
+}
+
+/* Second row positioning - in the gaps */
+.techItem:nth-child(5) {
+  grid-column: 2 / 3;
+  grid-row: 2;
+}
+
+.techItem:nth-child(6) {
+  grid-column: 4 / 5;
+  grid-row: 2;
+}
+
+.techItem:nth-child(7) {
+  grid-column: 6 / 7;
+  grid-row: 2;
+}
+
+.logoContainer {
+  width: 120px;
+  height: 100px;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: floatMove 3s ease-in-out infinite;
+}
+
+.logo {
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: contain;
+}
+
+.techName {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin-top: 8px;
+}
+
+/* Appearing animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Floating movement animation */
+@keyframes floatMove {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Different floating rhythm for variety */
+.techItem:nth-child(even) .logoContainer {
+  animation: floatMove 4s ease-in-out infinite reverse;
+}
+
+.techItem:nth-child(odd) .logoContainer {
+  animation: floatMove 3.5s ease-in-out infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem 2rem;
+  }
+  
+  .techItem:nth-child(1),
+  .techItem:nth-child(2),
+  .techItem:nth-child(3),
+  .techItem:nth-child(4),
+  .techItem:nth-child(5),
+  .techItem:nth-child(6),
+  .techItem:nth-child(7) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  .logoContainer {
+    width: 100px;
+    height: 70px;
+    padding: 12px;
+  }
+  
+  .logo {
+    max-width: 60px;
+    max-height: 40px;
+  }
+  
+  /* Reduce movement on mobile */
+  .logoContainer {
+    animation: floatMove 4s ease-in-out infinite;
+  }
+  
+  @keyframes floatMove {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-4px);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .logoContainer {
+    width: 80px;
+    height: 60px;
+    padding: 10px;
+  }
+  
+  .logo {
+    max-width: 50px;
+    max-height: 30px;
+  }
+  
+  .techName {
+    font-size: 0.75rem;
+  }
+}

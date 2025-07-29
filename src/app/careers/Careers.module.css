@@ -1,0 +1,121 @@
+/* Careers.module.css */
+
+/* Container and Layout */
+.careersContainer {
+  min-height: 100vh;
+  padding-top: 6rem;    /* pt-24 */
+ padding-bottom: 8rem; /* pb-32 */
+  background-color: #000;
+  color: #fff;
+}
+
+.careersContent {
+  max-width: 80rem; /* max-w-5xl */
+  margin: 0 auto;
+  padding: 0 1.5rem; /* px-6 */
+}
+
+/* Header / Intro */
+.careersHeader {
+  text-align: center;
+  margin-bottom: 4rem; /* mb-16 */
+}
+
+.sectionTitle {
+  font-size: 2rem;    /* approx text-4xl */
+  font-weight: 700;
+}
+
+.gradientText {
+  background: linear-gradient(90deg, #4f46e5, #06b6d4);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.introText {
+  margin-top: 1rem;      /* mt-4 */
+  color: #d1d5db;        /* text-gray-300 */
+  font-size: 1.125rem;   /* text-lg */
+  max-width: 42rem;      /* max-w-2xl */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Open Roles Section */
+.openRoles {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* space-y-8 */
+}
+
+.roleCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* gap-6 */
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  /* optional card background:
+     background-color: #1f2937; */
+}
+
+@media (min-width: 768px) {
+  .roleCard {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.roleTitle {
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 500;
+}
+
+.roleMeta {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;  /* text-sm */
+  color: #9ca3af;       /* text-gray-400 */
+}
+
+.applyButton {
+  padding: 0.5rem 1rem; /* small button */
+  font-size: 0.875rem;
+}
+
+/* Perks Section */
+.perksSection {
+  margin-top: 6rem; /* mt-24 */
+}
+
+.perksTitle {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 600;
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+
+.perksList {
+  display: grid;
+  gap: 2.5rem;          /* gap-10 */
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .perksList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.perkItem {
+  display: flex;
+  align-items: start;
+  gap: 1rem; /* gap-4 */
+}
+
+.perkIcon {
+  color: #60a5fa; /* text-blue-400 */
+  margin-top: 0.25rem; /* mt-1 */
+}
+
+.perkText {
+  color: #d1d5db; /* text-gray-300 */
+}

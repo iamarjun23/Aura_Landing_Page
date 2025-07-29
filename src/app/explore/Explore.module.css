@@ -1,0 +1,83 @@
+/* Explore.module.css */
+
+.section {
+  padding-top: 6rem;
+  padding-bottom: 8rem;
+  background-color: #000;
+  color: #fff;
+}
+
+.container {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300;
+}
+
+.subtitle {
+  margin-top: 1rem;
+  color: #9ca3af;
+  font-size: 1.125rem;
+}
+
+.grid {
+  display: grid;
+  gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+  border-color: #3b82f6;
+  transform: translateY(-4px);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.icon {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.cardText {
+  color: #9ca3af;
+  line-height: 1.6;
+}
