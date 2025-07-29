@@ -38,9 +38,7 @@ const WhyAura = () => {
                 viewport={{ once: true }}
                 className={styles.paragraph}
               >
-                AURA AI is more than just an assistant — it&apos;s an 
-                ecosystem built to redefine how humans interact with 
-                technology.
+                {"AURA AI is more than just an assistant — it's an  ecosystem built to redefine how humans interact with technology."}
               </motion.p>
               
               <motion.p
@@ -50,8 +48,7 @@ const WhyAura = () => {
                 viewport={{ once: true }}
                 className={styles.paragraph}
               >
-                Whether you&apos;re looking to boost productivity, 
-                enhance accessibility, or streamline complex tasks,
+                {"Whether you're looking to boost productivity, enhance accessibility, or streamline complex tasks,"}
               </motion.p>
               
               <motion.p
@@ -61,8 +58,7 @@ const WhyAura = () => {
                 viewport={{ once: true }}
                 className={styles.paragraph}
               >
-                AURA AI gives you the power to do it all — touchlessly 
-                and intelligently.
+                {"AURA AI gives you the power to do it all — touchlessly  and intelligently."}
               </motion.p>
             </div>
           </motion.div>
